@@ -1,6 +1,6 @@
-# Ye-Tay (TayTay / Kanye) (T-Swift / Yeezus) Code-Along
+# Shake It Off (T-Swift) Code-Along
 
-### Instructions for syncing your code to David's most recent commit:
+### Instructions for syncing your code to your instructor's most recent commit:
 
 ```bash
 git fetch --all
