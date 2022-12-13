@@ -27,7 +27,7 @@ function render() {
 
 function appendQuote(quote) {
   let quoteCard = document.createElement('div')
-  quoteCard.className = `card`
+  quoteCard.className = `card ${quote.isTaylor ? 'taylor' : 'not-taylor'}`
   quoteCard.innerHTML = 
   `<div>
     <p>${quote.text}</p>
