@@ -1,3 +1,13 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
 :root {
   --cursive: "Dancing Script", cursive;
   --serif: "Playfair Display", serif;
@@ -42,7 +52,7 @@ h1 {
   font-family: var(--serif);
   font-size: 48px;
   margin: 0 0 12px 0;
-  padding: 12px 0;
+  padding: 12px;
   text-align: center;
   width: 100%;
 }
