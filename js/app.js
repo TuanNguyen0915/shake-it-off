@@ -3,6 +3,7 @@ import { getRandomQuote } from "../data/quotes.js"
 import * as taylorAudio from '../js/audio.js'
 
 /*------------ Variables ------------*/
+const quotes = []
 
 
 /*---- Cached Element References ----*/
@@ -13,9 +14,13 @@ const cardContainer = document.querySelector('#card-container')
 
 
 /*--------- Event Listeners ---------*/
-quoteBtn.addEventListener('click', () => {
-  taylorAudio.playShakeItOff()
-  console.log(getRandomQuote())
-})
+quoteBtn.addEventListener('click', createQuote)
 
 /*------------ Functions ------------*/
+
+function createQuote() {
+  taylorAudio.playShakeItOff()
+  const newQuote = getRandomQuote()
+  quotes.push(newQuote)
+  console.log(quotes)
+}
