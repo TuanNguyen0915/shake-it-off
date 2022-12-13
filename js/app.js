@@ -1,7 +1,7 @@
 /*------------ Constants ------------*/
 
 import { getRandomQuote } from "../data/quotes.js"
-import { playShakeItOff } from "../data/audio.js"
+import * as taylorAudio from "../data/audio.js"
 
 /*------------ Variables ------------*/
 
@@ -25,6 +25,11 @@ checkDarkPref()
 
 function toggleLightDark() {
   body.className = body.className === "dark" ? "" : "dark"
+  if (body.className === 'dark') {
+    taylorAudio.playDarkNight()
+  } else {
+    taylorAudio.playDaylight()
+  }
 }
 
 function checkDarkPref() {
@@ -37,7 +42,7 @@ function checkDarkPref() {
 }
 
 function createQuote() {
-  playShakeItOff()
+  taylorAudio.playShakeItOff()
   const newQuote = getRandomQuote()
   quotes.push(newQuote)
   render()
@@ -68,6 +73,7 @@ function appendQuote(quote, idx) {
 function deleteQuote(evt) {
   const idx = evt.target.id.replace("delete-btn-", "")
   quotes.splice(idx, 1)
+  taylorAudio.playNoNiceThings()
   render()
 }
 
