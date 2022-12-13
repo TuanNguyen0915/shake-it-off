@@ -1,7 +1,7 @@
 /*------------ Constants ------------*/
 
 import { getRandomQuote } from "../data/quotes.js"
-import * as taylorAudio from "../data/audio.js"
+import * as taylorAudio from "../js/audio.js"
 
 /*------------ Variables ------------*/
 
