@@ -4,5 +4,5 @@
 
 ```bash
 git fetch --all
-git reset --hard upstream/main
+git reset --hard origin/main
 ```
