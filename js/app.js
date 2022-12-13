@@ -1,6 +1,7 @@
 /*------------ Constants ------------*/
 
 import { getRandomQuote } from "../data/quotes.js"
+import { playShakeItOff } from "../data/audio.js"
 
 /*------------ Variables ------------*/
 
@@ -36,6 +37,7 @@ function checkDarkPref() {
 }
 
 function createQuote() {
+  playShakeItOff()
   const newQuote = getRandomQuote()
   quotes.push(newQuote)
   render()
@@ -51,14 +53,15 @@ function render() {
 
 function appendQuote(quote, idx) {
   let quoteCard = document.createElement("div")
+  quoteCard.className = `card ${quote.isTaylor ? 'taylor' : 'not-taylor'}`
   quoteCard.innerHTML =
-  `<div class="card ${quote.isTaylor ? 'taylor' : 'not-taylor'}">
+  `<div>
     <p>${quote.text}</p>
-    ${quote.isTaylor ? '-- T-Swift' : '-- A Hater'}
-    <footer>
-      <button class='delete-btn' id='delete-btn-${idx}'>X</button>
-    </footer>
-  </div>`
+    <p>${quote.isTaylor ? '-- T-Swift' : '-- A Hater'}</p>
+  </div>
+  <footer>
+    <button class='delete-btn' id='delete-btn-${idx}'>X</button>
+  </footer>`
   cardContainer.appendChild(quoteCard)
 }
 

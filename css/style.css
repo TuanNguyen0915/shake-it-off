@@ -56,6 +56,9 @@ h1 {
 }
 
 .card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   border: 1px solid black;
   width: 250px;
   padding: 10px;
@@ -104,6 +107,7 @@ button {
   background-color: var(--not-taylor);
   background-image: var(--not-taylor);
   color: whitesmoke;
+  font-size: 18px;
   font-family: var(--serif);
 }
 
