@@ -18,9 +18,27 @@ quoteBtn.addEventListener('click', createQuote)
 
 /*------------ Functions ------------*/
 
+function render() {
+  cardContainer.innerHTML = ''
+  quotes.forEach(quote => {
+    appendQuote(quote)
+  })
+}
+
+function appendQuote(quote) {
+  let quoteCard = document.createElement('div')
+  quoteCard.className = `card`
+  quoteCard.innerHTML = 
+  `<div>
+    <p>${quote.text}</p>
+    <p>${quote.isTaylor ? '-- T-Swift' : '-- A. Hater'}</p>
+  </div>`
+  cardContainer.appendChild(quoteCard)
+}
+
 function createQuote() {
   taylorAudio.playShakeItOff()
   const newQuote = getRandomQuote()
   quotes.push(newQuote)
-  console.log(quotes)
+  render()
 }
