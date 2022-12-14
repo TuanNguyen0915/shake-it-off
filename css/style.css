@@ -13,12 +13,49 @@ html {
   --serif: "Playfair Display", serif;
 }
 
+h1 {
+  background-color: var(--header-bg);
+  font-family: var(--serif);
+  font-size: 48px;
+  font-weight: 700;
+  margin: 12px 0;
+  padding: 12px;
+  text-align: center;
+  width: 100%;
+}
+
 body {
-  background-color: slategray;
-  display: flex;
-  flex-direction: column;
+  --body-bg: #8a8b9b;
+  --btn-text-color: whitesmoke;
+  --header-bg: #007bbe;
+  --inverted-btn-text-color: #eaeaea;
+  --light-dark-btn-bg: #1d1e2b;
+  --light-dark-btn-content: "Dark Mode";
+  --not-taylor: #822A3E;
+  --taylor: #2B3F6E;
   align-items: center;
-  font-family: var(--cursive);
+  background-color: var(--body-bg);
+  /* Use a system font, if none are available use an available sans-sarif font */
+  display: flex;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  flex-direction: column;
+  margin: 0;
+}
+
+body.dark {
+  --body-bg: #22232b;
+  --btn-text-color: #eaeaea;
+  --header-bg: #005e9d;
+  --inverted-btn-text-color: #2a2a2a;
+  --light-dark-btn-bg: linear-gradient(to right top, #444655, #595b6b, #6f7181,
+    #868898, #9ea0b0, #acaebe, #bbbccd, #cacbdc, #d2d4e5, #dadced, #e3e5f6, #ebeeff);
+  --light-dark-btn-content: "Light Mode";
+  --taylor: linear-gradient(to right top, #560185, #6b0092, #7e009b, #89009b, 
+    #920097, #a7008b, #bd0281, #ac0064, #bd134f, #c52f39, #c54a22, #be6300);
+  --not-taylor: linear-gradient(to right top, #213555, #213c59, #22425d, #254960,
+    #2a4f63, #264c61, #224860, #1e455e, #173757, #18294e, #1d1941, #210632);
+  background-color: var(--body-bg);
 }
 
 .card {
@@ -49,23 +86,39 @@ button {
 
 #quote-button {
   background-color: maroon;
-  color: whitesmoke;
+  color: var(--btn-text-color);
 }
 
 .delete-btn {
   background-color: rgb(57, 52, 52);
-  color: whitesmoke;
+  color: var(--btn-text-color);
   font-size: 16px;
 }
 
+#light-dark-button {
+  background-color: var(--light-dark-btn-bg);
+  background-image: var(--light-dark-btn-bg);
+}
+
+#light-dark-button::after {
+  color: var(--inverted-btn-text-color);
+  content: var(--light-dark-btn-content);
+}
+
 .taylor {
-  background-color: #2B3F6E;
+  background-color: var(--taylor);
+  background-image: var(--taylor);
+  font-size: 24px;
   color: whitesmoke;
+  font-family: var(--cursive);
 }
 
 .not-taylor {
-  background-color: #822A3E;
+  background-color: var(--not-taylor);
+  background-image: var(--not-taylor);
   color: whitesmoke;
+  font-size: 18px;
+  font-family: var(--serif);
 }
 
 footer {

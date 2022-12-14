@@ -10,14 +10,36 @@ const quotes = []
 
 const quoteBtn = document.querySelector('#quote-button')
 const cardContainer = document.querySelector('#card-container')
-
+const lightDarkBtn = document.querySelector('#light-dark-button')
+const body = document.querySelector('body')
 
 
 /*--------- Event Listeners ---------*/
 quoteBtn.addEventListener('click', createQuote)
 cardContainer.addEventListener('click', deleteQuote)
+lightDarkBtn.addEventListener('click', toggleLightDark)
 
 /*------------ Functions ------------*/
+
+checkDarkPref()
+
+function toggleLightDark() {
+  body.className = body.className === "dark" ? "" : "dark"
+  if (body.className === 'dark') {
+    taylorAudio.playDarkNight()
+  } else {
+    taylorAudio.playDaylight()
+  }
+}
+
+function checkDarkPref() {
+  if (
+    window.matchMedia("(prefers-color-scheme:dark)").matches &&
+    body.className !== "dark"
+  ) {
+    toggleLightDark()
+  }
+}
 
 function deleteQuote(evt)  {
   if(evt.target.className === 'delete-btn') {
