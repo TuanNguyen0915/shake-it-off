@@ -47,6 +47,12 @@ button {
   color: whitesmoke;
 }
 
+.delete-btn {
+  background-color: rgb(57, 52, 52);
+  color: whitesmoke;
+  font-size: 16px;
+}
+
 .taylor {
   background-color: #2B3F6E;
   color: whitesmoke;
@@ -55,4 +61,9 @@ button {
 .not-taylor {
   background-color: #822A3E;
   color: whitesmoke;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
 }
