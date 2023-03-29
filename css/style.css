@@ -1,3 +1,7 @@
+:root {
+  --cursive: 'Delicious Handrawn'
+}
+
 html {
   box-sizing: border-box;
 }
@@ -17,6 +21,8 @@ body {
 }
 
 .card {
+  font-family: var(--cursive);
+  font-size: 32px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
