@@ -33,7 +33,14 @@ function render() {
 }
 
 function appendQuote(quote) {
-  console.log('appending quote', quote)
+  let quoteCard = document.createElement('div')
+  quoteCard.className = 'card'
+  quoteCard.innerHTML = `
+  <div>
+    <p>${quote.text}</p>
+    <p>${quote.isTaylor ? '-- T-Swift' : '-- A Hater'}</p>
+  </div>`
+  cardContainer.appendChild(quoteCard)
 }
 
 //// - Add an HTML button that will be used to add a quote
