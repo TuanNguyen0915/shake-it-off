@@ -16,6 +16,7 @@ const cardContainer = document.querySelector('#card-container')
 /*--------- Event Listeners ---------*/
 
 quoteBtn.addEventListener('click', createQuote)
+cardContainer.addEventListener('click', deleteQuote)
 
 /*------------ Functions ------------*/
 
@@ -47,6 +48,14 @@ function appendQuote(quote, idx) {
   cardContainer.appendChild(quoteCard)
 }
 
+function deleteQuote(evt) {
+  if (evt.target.className === 'delete-btn') {
+    const idx = evt.target.id.replace('delete-btn-', '')
+    quotes.splice(idx, 1)
+    render()
+  }
+}
+
 //// - Add an HTML button that will be used to add a quote
 //// - Add a container element for the card components to be appended to
 //// - Add a cached element reference for the button
@@ -56,9 +65,9 @@ function appendQuote(quote, idx) {
 //// - Import the function that will access the quote data
 //// - Ensure the function that we have built will work as intended
 //// - Tweak event listeners so that the quote data is stored in a variable
-// - Create a card so each quote will have a card associated with it
-// - Create a render function
-// - Add a function to handle appending a card to the container element
-// - Add a button to the card so that we can remove the quote
+//// - Create a card so each quote will have a card associated with it
+//// - Create a render function
+//// - Add a function to handle appending a card to the container element
+//// - Add a button to the card so that we can remove the quote
 // - When the delete button is clicked, remove the quote from the array
 // - Add a favicon to our site
