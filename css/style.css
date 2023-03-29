@@ -56,3 +56,14 @@ button {
   background-color: #822A3E;
   color: whitesmoke;
 }
+
+footer {
+  display: flex;
+  justify-content: center;
+}
+
+.delete-btn {
+  background-color: rgb(57, 52, 52);
+  color: whitesmoke;
+  font-size: 16px;
+}

@@ -27,19 +27,23 @@ function createQuote() {
 
 function render() {
   cardContainer.innerHTML = ''
-  quotes.forEach(quote => {
-    appendQuote(quote)
+  quotes.forEach((quote, idx) => {
+    appendQuote(quote, idx)
   })
 }
 
-function appendQuote(quote) {
+function appendQuote(quote, idx) {
   let quoteCard = document.createElement('div')
   quoteCard.className = `card ${quote.isTaylor ? 'taylor' : 'not-taylor'}`
   quoteCard.innerHTML = `
   <div>
     <p>${quote.text}</p>
     <p>${quote.isTaylor ? '-- T-Swift' : '-- A Hater'}</p>
-  </div>`
+  </div>
+  <footer>
+    <button class='delete-btn' id='delete-btn-${idx}' >X</button>
+  </footer>
+  `
   cardContainer.appendChild(quoteCard)
 }
 
