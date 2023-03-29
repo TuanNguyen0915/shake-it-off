@@ -22,7 +22,18 @@ quoteBtn.addEventListener('click', createQuote)
 function createQuote() {
   const newQuote = getRandomQuote()
   quotes.push(newQuote)
-  console.log(quotes)
+  render()
+}
+
+function render() {
+  cardContainer.innerHTML = ''
+  quotes.forEach(quote => {
+    appendQuote(quote)
+  })
+}
+
+function appendQuote(quote) {
+  console.log('appending quote', quote)
 }
 
 //// - Add an HTML button that will be used to add a quote
