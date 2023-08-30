@@ -1,3 +1,8 @@
+:root {
+  --cursive: "Dancing Script", cursive;
+  --serif: "Playfair Display", serif;
+}
+
 html {
   box-sizing: border-box;
 }
@@ -55,11 +60,14 @@ button {
 .taylor {
   background-color: #2b3f6e;
   color: whitesmoke;
+  font-family: var(--cursive);
 }
 
 .not-taylor {
   background-color: #822a3e;
   color: whitesmoke;
+  font-family: var(--serif);
+  font-size: 20px;
 }
 
 footer {
