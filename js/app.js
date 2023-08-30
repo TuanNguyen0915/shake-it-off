@@ -7,11 +7,13 @@ const quotes = [];
 const quoteBtn = document.querySelector("#quote-button");
 const cardContainer = document.querySelector("#card-container");
 const favicon = document.getElementById("favicon");
+const lightDarkBtn = document.getElementById("light-dark-button");
+const body = document.body;
 
 /*--------- Event Listeners ---------*/
 quoteBtn.addEventListener("click", createQuote);
 cardContainer.addEventListener("click", deleteQuote);
-
+lightDarkBtn.addEventListener("click", toggleLightDark);
 /*------------ Function ------------*/
 
 function createQuote() {
@@ -58,5 +60,20 @@ function adjustFavicon(isTaylor) {
   } else {
     // set favicon to tater tot
     favicon.setAttribute("href", "./assets/tot.png");
+  }
+}
+
+function toggleLightDark() {
+  body.className = body.className === "dark" ? "" : "dark";
+  if (body.className === "dark") {
+    taylorAudio.playDarkNight();
+  } else {
+    taylorAudio.playDaylight();
+  }
+}
+
+function checkDarkPref() {
+  if (window.matchMedia("(prefers-color-scheme:dark)").matches && body.className !== "dark") {
+    toggleLightDark();
   }
 }
