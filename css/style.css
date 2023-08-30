@@ -45,10 +45,29 @@ button {
 #quote-button {
   background-color: maroon;
   color: whitesmoke;
-  transition: ease-out 0.1s;
+  transition: ease-in 0.2s;
 }
 
 #quote-button:hover {
-  color: maroon;
-  box-shadow: inset 200px 0 0 0 whitesmoke;
+  box-shadow: inset 200px 0 0 0 #2b3f6e;
+}
+
+.taylor {
+  background-color: #2b3f6e;
+  color: whitesmoke;
+}
+
+.not-taylor {
+  background-color: #822a3e;
+  color: whitesmoke;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+}
+.delete-btn {
+  background-color: rgb(57, 52, 52);
+  color: whitesmoke;
+  font-size: 16px;
 }
