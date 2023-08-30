@@ -7,3 +7,48 @@ html {
 *::after {
   box-sizing: inherit;
 }
+
+body {
+  background-color: #ccc;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: sans-serif;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 1px solid black;
+  width: 250px;
+  padding: 10px;
+}
+
+#card-container {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 16px;
+}
+
+button {
+  margin: 8px;
+  cursor: pointer;
+  padding: 8px 16px;
+  font-size: 24px;
+  border-radius: 8px;
+  border: none;
+}
+
+#quote-button {
+  background-color: maroon;
+  color: whitesmoke;
+  transition: ease-out 0.5s;
+}
+
+#quote-button:hover {
+  color: maroon;
+  box-shadow: inset 200px 0 0 0 whitesmoke;
+}
