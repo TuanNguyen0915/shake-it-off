@@ -9,7 +9,7 @@ html {
 }
 
 body {
-  background-color: #ccc;
+  background-color: slategrey;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -45,7 +45,7 @@ button {
 #quote-button {
   background-color: maroon;
   color: whitesmoke;
-  transition: ease-out 0.5s;
+  transition: ease-out 0.1s;
 }
 
 #quote-button:hover {
